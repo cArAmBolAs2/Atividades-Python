@@ -1,0 +1,101 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #f9fafb;
+    color: #1f2937;
+}
+
+h1 {
+    margin-top: 40px;
+}
+
+#calculator {
+    display: inline-block;
+    text-align: left;
+    border: 1px solid #e5e7eb;
+    padding: 24px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    border-radius: 8px;
+    width: 340px;
+    margin: 20px auto;
+}
+
+.form-grupo {
+    margin-bottom: 16px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 8px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+}
+
+.resultado {
+    margin-top: 20px;
+    padding: 14px;
+    background: #f0f4f8;
+    border-left: 4px solid #2563eb;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.resultado strong {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 12px;
+    color: #4b5563;
+    text-transform: uppercase;
+}
+
+.etapas {
+    color: #4b5563;
+    font-style: italic;
+    margin-bottom: 4px;
+}
+
+.valor-final {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.btn-limpar {
+    display: block;
+    text-align: center;
+    margin-top: 16px;
+    color: #2563eb;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.btn-limpar:hover {
+    text-decoration: underline;
+}
