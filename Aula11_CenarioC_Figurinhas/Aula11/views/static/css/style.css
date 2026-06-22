@@ -1,0 +1,134 @@
+/* views/static/css/style.css — estilos simples do cenário C */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f9;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ── Navegação ── */
+.nav {
+    background: #1a56db;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    gap: 1.5rem;
+}
+.nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+}
+.nav a:hover { text-decoration: underline; }
+
+/* ── Container principal ── */
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    flex: 1;
+}
+
+h1 { margin-bottom: 1rem; color: #1a56db; }
+.subtitulo { color: #666; margin-bottom: 1.5rem; font-size: 0.9rem; }
+
+/* ── Cards do painel ── */
+.cards {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+.card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.25rem 2rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 130px;
+}
+.card-num   { font-size: 2rem; font-weight: bold; color: #1a56db; }
+.card-label { font-size: 0.85rem; color: #555; margin-top: 0.25rem; }
+
+/* ── Botão ── */
+.btn {
+    display: inline-block;
+    background: #1a56db;
+    color: #fff;
+    padding: 0.5rem 1.25rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+}
+.btn:hover { background: #1344b0; }
+
+/* ── Tabela ── */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,.08);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+th {
+    background: #1a56db;
+    color: #fff;
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-size: 0.85rem;
+}
+td {
+    padding: 0.65rem 1rem;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
+}
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: #f0f4ff; }
+
+/* ── Formulário ── */
+.form-grupo {
+    margin-bottom: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    max-width: 480px;
+}
+label {
+    font-weight: bold;
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem;
+    color: #444;
+}
+input[type="text"],
+select {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+input[type="text"]:focus,
+select:focus {
+    outline: none;
+    border-color: #1a56db;
+}
+
+/* ── Mensagem vazio ── */
+.vazio { color: #888; font-style: italic; margin-top: 1rem; }
+
+/* ── Footer ── */
+footer {
+    text-align: center;
+    padding: 1rem;
+    color: #aaa;
+    font-size: 0.8rem;
+}

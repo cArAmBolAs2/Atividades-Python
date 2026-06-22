@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block title %}Troca de Figurinhas{% endblock %}
+
+{% block content %}
+<h1>Ofertas de troca — Copa do Mundo</h1>
+<p><a class="btn" href="{{ url_for('figurinhas.cadastrar_oferta') }}">+ Nova oferta</a></p>
+
+{# TODO ALUNO resolvido: loop ofertas com Jinja2 #}
+{% if ofertas %}
+<table>
+    <thead>
+        <tr>
+            <th>Colecionador</th>
+            <th>Cidade</th>
+            <th>Oferece</th>
+            <th>Deseja</th>
+            <th>Observação</th>
+            <th>Data</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for oferta in ofertas %}
+        <tr>
+            <td>{{ oferta.colecionador.apelido }}</td>
+            <td>{{ oferta.colecionador.cidade }}</td>
+
+            {# Filtra os itens pelo tipo #}
+            {% set item_oferece = oferta.itens | selectattr("tipo","equalto","oferece") | first %}
+            {% set item_deseja  = oferta.itens | selectattr("tipo","equalto","deseja")  | first %}
+
+            <td>
+                {% if item_oferece %}
+                    #{{ item_oferece.figurinha.numero }} — {{ item_oferece.figurinha.nome_jogador }}
+                {% else %}—{% endif %}
+            </td>
+            <td>
+                {% if item_deseja %}
+                    #{{ item_deseja.figurinha.numero }} — {{ item_deseja.figurinha.nome_jogador }}
+                {% else %}—{% endif %}
+            </td>
+
+            <td>{{ oferta.observacao if oferta.observacao else "—" }}</td>
+            <td>{{ oferta.data_criacao.strftime("%d/%m/%Y") }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p class="vazio">Nenhuma oferta cadastrada ainda. <a href="{{ url_for('figurinhas.cadastrar_oferta') }}">Seja o primeiro!</a></p>
+{% endif %}
+{% endblock %}
